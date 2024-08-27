@@ -3,6 +3,9 @@ import React, { createContext, ReactNode, useContext, useState } from "react";
 interface Widget {
   id: string;
   name: string;
+  data: Array<number>;
+  labels: Array<string>;
+  colors: Array<string>;
 }
 
 interface Category {
@@ -33,14 +36,23 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({
         {
           id: "w1",
           name: "Cloud Accounts",
+          data: [1, 2],
+          labels: ["Connected", "Not Connected"],
+          colors: ["#4C6FFF", "#E0E7FF"],
         },
         {
           id: "w2",
           name: "Cloud Account Risk Assessment",
+          data: [1659, 686, 36, 7581],
+          labels: ["Failed", "Warning", "Not Applicable", "Passed"],
+          colors: ["#FF4C4C", "#FFA500", "#808080", "#4CAF50"],
         },
         {
           id: "w3",
           name: "",
+          data: [],
+          labels: [],
+          colors: [],
         },
       ],
     },
@@ -51,14 +63,23 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({
         {
           id: "w4",
           name: "Top 5 Namespace Specific Alerts",
+          data: [],
+          labels: [],
+          colors: [],
         },
         {
-          id: "w5",
+          id: "w4",
           name: "Workload Alerts",
+          data: [],
+          labels: [],
+          colors: [],
         },
         {
-          id: "w6",
+          id: "w3",
           name: "",
+          data: [],
+          labels: [],
+          colors: [],
         },
       ],
     },
@@ -69,14 +90,23 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({
         {
           id: "w7",
           name: "Image Risk Assessment",
+          data: [100, 200, 300, 400, 500],
+          labels: ["Critical", "High", "Medium", "Low", "Info"],
+          colors: ["#FF0000", "#FFA500", "#FFFF00", "#00FF00", "#0000FF"],
         },
         {
           id: "w8",
           name: "Image Security Issues",
+          data: [2, 0, 0, 0],
+          labels: ["Critical", "High", "Medium", "Low"],
+          colors: ["#FF0000", "#FFA500", "#FFFF00", "#00FF00"],
         },
         {
-          id: "w9",
+          id: "w3",
           name: "",
+          data: [],
+          labels: [],
+          colors: [],
         },
       ],
     },

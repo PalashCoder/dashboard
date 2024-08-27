@@ -2,12 +2,19 @@ import React from "react";
 import { useDashboard } from "../../contexts/DashboardContext";
 import DonutChart from "../Charts/DonutChart";
 import BarChart from "../Charts/BarChart";
+import Widget from "../Widgets/Widget";
 
 interface CategoryProps {
   category: {
     id: string;
     name: string;
-    widgets: Array<{ id: string; name: string }>;
+    widgets: Array<{
+      id: string;
+      name: string;
+      data: Array<number>;
+      labels: Array<string>;
+      colors: Array<string>;
+    }>;
   };
 }
 
@@ -21,14 +28,7 @@ const Category: React.FC<CategoryProps> = ({ category }) => {
         {category.widgets.map((widget) => (
           <div className="bg-gray-50 p-4 rounded-md relative" key={widget.id}>
             <h3 className="text-lg font-medium mb-2">{widget.name}</h3>
-            <div className="h-56">
-              <BarChart
-                data={[100, 200, 300, 400, 500]}
-                labels={["Critical", "High", "Medium", "Low", "Info"]}
-                colors={["#FF0000", "#FFA500", "#FFFF00", "#00FF00", "#0000FF"]}
-                title="Image Risk Assessment"
-              />
-            </div>
+            <Widget widgets={widget} name={category.name} />
             <button
               onClick={() => removeWidget(category.id, widget.id)}
               className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
