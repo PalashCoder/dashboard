@@ -32,7 +32,7 @@ const DonutChart: React.FC<DonutChartProps> = ({
     responsive: true,
     plugins: {
       legend: {
-        position: "bottom" as const,
+        position: "right" as const,
       },
       title: {
         display: true,

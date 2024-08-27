@@ -27,7 +27,7 @@ const AddWidgetDrawer: React.FC = () => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed top-6 right-6 bg-blue-500 text-white p-2 rounded-xl shadow-lg"
+        className="fixed top-6 right-10 text-black p-2 rounded-lg border-[1px] border-gray-500 bg-white"
       >
         + Add Widget
       </button>

@@ -38,6 +38,10 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({
           id: "w2",
           name: "Cloud Account Risk Assessment",
         },
+        {
+          id: "w3",
+          name: "",
+        },
       ],
     },
     {
@@ -45,12 +49,16 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({
       name: "CWPP Dashboard",
       widgets: [
         {
-          id: "w3",
+          id: "w4",
           name: "Top 5 Namespace Specific Alerts",
         },
         {
-          id: "w4",
+          id: "w5",
           name: "Workload Alerts",
+        },
+        {
+          id: "w6",
+          name: "",
         },
       ],
     },
@@ -59,12 +67,16 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({
       name: "Registry Scan",
       widgets: [
         {
-          id: "w5",
+          id: "w7",
           name: "Image Risk Assessment",
         },
         {
-          id: "w6",
+          id: "w8",
           name: "Image Security Issues",
+        },
+        {
+          id: "w9",
+          name: "",
         },
       ],
     },
