@@ -1,14 +1,13 @@
-// src/components/Dashboard/AddWidgetDrawer.tsx
-"use client"
-import React, { useState } from 'react';
-import { useDashboard } from '../../contexts/DashboardContext';
+"use client";
+import React, { useState } from "react";
+import { useDashboard } from "../../contexts/DashboardContext";
 
 const AddWidgetDrawer: React.FC = () => {
   const { categories, addWidget } = useDashboard();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [widgetName, setWidgetName] = useState('');
-  const [widgetText, setWidgetText] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [widgetName, setWidgetName] = useState("");
+  const [widgetText, setWidgetText] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,12 +15,11 @@ const AddWidgetDrawer: React.FC = () => {
       addWidget(selectedCategory, {
         id: Date.now().toString(),
         name: widgetName,
-        text: widgetText,
       });
       setIsOpen(false);
-      setSelectedCategory('');
-      setWidgetName('');
-      setWidgetText('');
+      setSelectedCategory("");
+      setWidgetName("");
+      setWidgetText("");
     }
   };
 
@@ -29,7 +27,7 @@ const AddWidgetDrawer: React.FC = () => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg"
+        className="fixed top-6 right-6 bg-blue-500 text-white p-2 rounded-xl shadow-lg"
       >
         + Add Widget
       </button>
@@ -60,15 +58,6 @@ const AddWidgetDrawer: React.FC = () => {
                   type="text"
                   value={widgetName}
                   onChange={(e) => setWidgetName(e.target.value)}
-                  className="w-full p-2 border rounded"
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-2">Widget Text</label>
-                <textarea
-                  value={widgetText}
-                  onChange={(e) => setWidgetText(e.target.value)}
                   className="w-full p-2 border rounded"
                   required
                 />

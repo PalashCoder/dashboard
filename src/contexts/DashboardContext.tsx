@@ -1,11 +1,8 @@
-// src/contexts/DashboardContext.tsx
-"use client";
 import React, { createContext, ReactNode, useContext, useState } from "react";
 
 interface Widget {
   id: string;
   name: string;
-  text: string;
 }
 
 interface Category {
@@ -36,12 +33,10 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({
         {
           id: "w1",
           name: "Cloud Accounts",
-          text: "Connected: 1, Not Connected: 2",
         },
         {
           id: "w2",
           name: "Cloud Account Risk Assessment",
-          text: "Failed: 1659, Warning: 686, Not Applicable: 36, Passed: 7581",
         },
       ],
     },
@@ -52,9 +47,11 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({
         {
           id: "w3",
           name: "Top 5 Namespace Specific Alerts",
-          text: "No Graph data available!",
         },
-        { id: "w4", name: "Workload Alerts", text: "No Graph data available!" },
+        {
+          id: "w4",
+          name: "Workload Alerts",
+        },
       ],
     },
     {
@@ -64,9 +61,11 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({
         {
           id: "w5",
           name: "Image Risk Assessment",
-          text: "5470 total vulnerabilities",
         },
-        { id: "w6", name: "Image Security Issues", text: "2 total images" },
+        {
+          id: "w6",
+          name: "Image Security Issues",
+        },
       ],
     },
   ]);

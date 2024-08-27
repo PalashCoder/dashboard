@@ -1,4 +1,3 @@
-// src/app/page.tsx
 "use client"
 import Dashboard from "../components/Dashboard/Dashboard";
 import { DashboardProvider } from "../contexts/DashboardContext";
